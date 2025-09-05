@@ -13,6 +13,13 @@ require("neo-tree").setup({
 		winbar = true,
 		statusline = false,
 	},
+	filesystem = {
+		filtered_items = {
+			visible = false,
+			hide_dotfiles = false,
+			hide_gitignored = true,
+		},
+	},
 	window = {
 		mappings = {
 			["p"] = {
@@ -22,16 +29,6 @@ require("neo-tree").setup({
 					use_image_nvim = true,
 					use_snacks_image = true,
 					title = "Neo-tree Preview",
-					float_opt = {
-						relative = "editor",
-						border = "rounded",
-						width = function()
-							return math.floor(vim.o.columns * 0.8)
-						end,
-						height = function()
-							return math.floor(vim.o.lines * 0.8)
-						end,
-					},
 				},
 			},
 			["c"] = "copy_to_clipboard",
@@ -103,6 +100,21 @@ require("neo-tree").setup({
 				end)
 			end,
 		},
+	},
+	components = {
+		git_status = {
+			symbols = {
+				added     = "",
+				conflict  = "",
+				deleted   = "",
+				ignored   = "",
+				modified  = "●",
+				renamed   = "",
+				staged    = "",
+				unmerged  = "",
+				untracked = "",
+			}
+		}
 	},
 	event_handlers = {
 		{
