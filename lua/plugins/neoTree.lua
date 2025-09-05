@@ -2,9 +2,9 @@ vim.api.nvim_set_hl(0, "NeoTreePreviewBorder", { fg = "#4B5263" })
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
-vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
-vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
-vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
+-- -- vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
+-- vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
+-- vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
 require("neo-tree").setup({
 	open_at_startup = false,
@@ -17,7 +17,7 @@ require("neo-tree").setup({
 		filtered_items = {
 			visible = false,
 			hide_dotfiles = false,
-			hide_gitignored = true,
+			hide_gitignored = false,
 		},
 	},
 	window = {
@@ -45,16 +45,17 @@ require("neo-tree").setup({
 
 				vim.ui.input({
 					prompt = "New File/Folder: ",
-					default = dir_path .. "/",
+					default = "",
 					completion = "file",
 				}, function(input)
 					if not input then
 						return
 					end
+					path_create = dir_path .. "/" .. input
 					if input:sub(-1) == "/" then
-						vim.fn.mkdir(input, "p")
+						vim.fn.mkdir(path_create, "p")
 					else
-						vim.fn.writefile({}, input)
+						vim.fn.writefile({}, path_create)
 					end
 					require("neo-tree.sources.manager").refresh("filesystem")
 				end)
@@ -104,17 +105,17 @@ require("neo-tree").setup({
 	components = {
 		git_status = {
 			symbols = {
-				added     = "",
-				conflict  = "",
-				deleted   = "",
-				ignored   = "",
-				modified  = "●",
-				renamed   = "",
-				staged    = "",
-				unmerged  = "",
+				added = "",
+				conflict = "",
+				deleted = "",
+				ignored = "",
+				modified = "●",
+				renamed = "",
+				staged = "",
+				unmerged = "",
 				untracked = "",
-			}
-		}
+			},
+		},
 	},
 	event_handlers = {
 		{

@@ -5,7 +5,7 @@ function Im(key, command)
 end
 
 function Nm(key, command)
-	map("n", key, command, { noremap = true })
+	map("n", key, command, { noremap = true, silent = true })
 end
 
 function Vm(key, command)

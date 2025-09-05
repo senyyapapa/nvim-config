@@ -77,6 +77,7 @@ require("lazy").setup({
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
+			"hrsh7th/cmp-cmdline",
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp",
@@ -137,5 +138,28 @@ require("lazy").setup({
 				},
 			},
 		},
+	},
+	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+	{ "famiu/bufdelete.nvim" },
+	{
+		"Exafunction/codeium.vim", -- Официальный плагин
+		lazy = false, -- Загружать только при входе в insert-режим
+		config = function()
+			-- Настройки (опционально)
+			vim.g.codeium_disable_bindings = 1 -- Отключить стандартные клавиши (если хотите свои)
+			vim.g.codeium_no_map_tab = 1 -- Не перехватывать Tab (чтобы не конфликтовал с другими плагинами)
+			vim.g.codeium_enabled = 1
+			vim.g.codeium_manual = 0
+			vim.g.codeium_idle_delay = 100
+			vim.keymap.set("i", "<D-l>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true, silent = true })
+			vim.keymap.set("i", "<C-i>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true, silent = true })
+			vim.keymap.set("i", "<C-o>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true, silent = true })
+		end,
 	},
 })

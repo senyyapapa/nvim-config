@@ -8,6 +8,11 @@ Nm("<leader>e", ":Neotree filesystem reveal left focus<CR>")
 Nm("<leader>o", ":Neotree filesystem reveal float focus<CR>")
 Nm("<leader>g", ":Neotree float git_status<CR>")
 Nm("<leader>/", ":CommentToggle<CR>")
+Nm("<leader>x", ":Bdelete!<CR>")
+Nm("<leader>X", ":BufferLinePickClose<CR>")
+Nm("<leader>s", ":BufferLineSortByTabs<CR>")
+Nm("<Tab>", ":BufferLineCycleNext<CR>")
+Nm("<s-Tab>", ":BufferLineCyclePrev<CR>")
 
 --movement
 Nm("<C-h>", "<C-\\><C-n><C-w>h")

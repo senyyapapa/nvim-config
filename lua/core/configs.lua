@@ -5,10 +5,9 @@ opt.relativenumber = true
 opt.number = true
 opt.tabstop = 2
 
-
 vim.opt.fillchars = {
-		stl = "─",
-		eob = " ", 
+	stl = "─",
+	eob = " ",
 }
 vim.o.laststatus = 3
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = "unnamedplus"

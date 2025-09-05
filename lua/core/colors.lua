@@ -1,5 +1,5 @@
 vim.opt.termguicolors = true
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme tokyonight-storm]])
 
 vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { bg = "NONE" })

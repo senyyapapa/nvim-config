@@ -52,3 +52,13 @@ window = {
 
 -- Add snippets from Friendly Snippets
 require("luasnip/loaders/from_vscode").lazy_load()
+
+-- Настройка для командной строки
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
