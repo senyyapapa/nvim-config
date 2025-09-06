@@ -23,7 +23,7 @@ Nm("<C-q>", "<C-\\><C-n>:q<CR>")
 
 --Terminal
 Nm("<leader>h", ":lua Horizontal_term_toggle()<CR>")
-Nm("<leader>v", ":ToggleTerm direction=tab<CR>")
+Nm("<leader>v", ":lua Vertical_term_toggle()<CR>")
 Nm("<leader>b", ":lua Float_term_toggle()<CR>")
 
 --Insert Mode
@@ -37,10 +37,3 @@ Tm("<C-j>", "<C-\\><C-n><C-w>j")
 Tm("<C-k>", "<C-\\><C-n><C-w>k")
 Tm("<C-l>", "<C-\\><C-n><C-w>l")
 Tm("<C-q>", "<C-\\><C-n>:q<CR>")
-
--- Tab navigation
-Nm("<leader><Tab>", ":tabnext<CR>")
-Nm("<leader><S-Tab>", ":tabprevious<CR>")
-
-Tm("<leader><Tab>", "<cmd>tabnext<CR>")
-Tm("<leader><S-Tab>", "<cmd>tabprevious<CR>")
