@@ -60,6 +60,23 @@ require("lazy").setup({
 	},
 	{
 		"neovim/nvim-lspconfig",
+		config = function()
+			-- Configure diagnostics UI
+			vim.diagnostic.config({
+				virtual_text = true,
+				signs = true,
+				update_in_insert = false,
+				underline = true,
+				severity_sort = true,
+			})
+
+			-- Add icons for diagnostic signs
+			local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+			for type, icon in pairs(signs) do
+				local hl = "DiagnosticSign" .. type
+				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+			end
+		end,
 	},
 	{
 		"onsails/lspkind-nvim",
@@ -163,4 +180,11 @@ require("lazy").setup({
 		end,
 	},
 	{ "windwp/nvim-ts-autotag" },
+	{
+		"mfussenegger/nvim-lint",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.lint")
+		end,
+	},
 })

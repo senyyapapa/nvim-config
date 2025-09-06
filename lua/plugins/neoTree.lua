@@ -23,15 +23,15 @@ require("neo-tree").setup({
 	},
 	window = {
 		mappings = {
-			["p"] = {
-				"toggle_preview",
-				config = {
-					use_float = true,
-					use_image_nvim = true,
-					use_snacks_image = true,
-					title = "Neo-tree Preview",
-				},
-			},
+			-- ["p"] = {
+			-- 	"toggle_preview",
+			-- 	config = {
+			-- 		use_float = true,
+			-- 		use_image_nvim = true,
+			-- 		use_snacks_image = true,
+			-- 		title = "Neo-tree Preview",
+			-- 	},
+			-- },
 			["c"] = "copy_to_clipboard",
 			["<tab>"] = "next_source",
 			["<S-tab>"] = "prev_source",
