@@ -1,5 +1,5 @@
 require('slimline').setup({
-bold = false, -- makes primary parts bold
+bold = true, -- makes primary parts bold
 
   -- Global style. Can be overwritten using `configs.<component>.style`
 spaces = {
@@ -35,20 +35,19 @@ spaces = {
         other = 'Function',
       },
       format = {
-				['n'] = { short = 'NOR' },
-                ['v'] = { short = 'VIS' },
-                ['V'] = { short = 'V-L' },
-                ['\22'] = { short = 'V-B' },
-                ['s'] = { short = 'SEL' },
-                ['S'] = { short = 'S-L' },
-                ['\19'] = { short = 'S-B' },
-                ['i'] = { short = 'INS' },
-                ['R'] = { short = 'REP' },
-                ['c'] = { short = 'CMD' },
-                ['r'] = { short = 'PRO' },
-                ['!'] = { short = 'SHE' },
-                ['t'] = { short = 'TER' },
-                ['U'] = { short = 'UNK' },
+				['n'] = { short = ' NORMAL' },
+                ['v'] = { short = ' VISUAL' },
+                ['V'] = { short = ' V-L' },
+                ['\22'] = { short = ' V-B' },
+                ['s'] = { short = ' SELECT' },
+                ['S'] = { short = ' S-L' },
+                ['\19'] = { short = ' S-B' },
+                ['i'] = { short = ' INSERT' },
+                ['R'] = { short = ' REPLACE' },
+                ['c'] = { short = ' COMMAND' },
+                ['r'] = { short = ' PROMPT' },
+                ['!'] = { short = ' SHELL' },
+                ['t'] = { short = ' TERM' },
       },
     },
     path = {
