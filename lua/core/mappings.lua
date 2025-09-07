@@ -37,3 +37,9 @@ Tm("<C-j>", "<C-\\><C-n><C-w>j")
 Tm("<C-k>", "<C-\\><C-n><C-w>k")
 Tm("<C-l>", "<C-\\><C-n><C-w>l")
 Tm("<C-q>", "<C-\\><C-n>:q<CR>")
+
+--Telescope
+Nm("<leader>ff", ":lua require('telescope.builtin').find_files()<cr>")
+Nm("<leader>fg", ":lua require('telescope.builtin').live_grep()<cr>")
+Nm("<leader>fb", ":lua require('telescope.builtin').buffers()<cr>")
+Nm("<leader>fh", ":lua require('telescope.builtin').help_tags()<cr>")

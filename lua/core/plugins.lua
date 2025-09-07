@@ -194,4 +194,5 @@ require("lazy").setup({
 	},
 	{ "rebelot/kanagawa.nvim" },
 	{ "tinted-theming/tinted-nvim" },
+	{ "nvim-telescope/telescope.nvim", tag = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
 })

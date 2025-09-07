@@ -19,3 +19,12 @@ vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { bg = "NONE" })
 -- end
 --
 -- SetColor()
+--
+require("kanagawa").setup({
+	terminalColors = true,
+	theme = "wave",
+	background = {
+		dark = "wave",
+		light = "wave",
+	},
+})
