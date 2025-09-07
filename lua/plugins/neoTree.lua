@@ -9,6 +9,8 @@ vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 require("neo-tree").setup({
 	open_at_startup = false,
 	hide_numbers = true,
+	popup_border_style = "",
+	close_if_last_window = true,
 	enable_diagnostics = false,
 	source_selector = {
 		winbar = true,
@@ -21,17 +23,40 @@ require("neo-tree").setup({
 			hide_gitignored = false,
 		},
 	},
+
+	default_component_configs = {
+		filesystem = {
+			symbols = {
+
+				added = "",
+				modified = "",
+			},
+		},
+		git_status = {
+			symbols = {
+				added = "✚",
+				deleted = "✖",
+				modified = "",
+				renamed = "󰁕",
+				untracked = "",
+				ignored = "",
+				unstaged = "󰄱",
+				staged = "",
+				conflict = "",
+			},
+		},
+	},
 	window = {
 		mappings = {
-			-- ["p"] = {
-			-- 	"toggle_preview",
-			-- 	config = {
-			-- 		use_float = true,
-			-- 		use_image_nvim = true,
-			-- 		use_snacks_image = true,
-			-- 		title = "Neo-tree Preview",
-			-- 	},
-			-- },
+			["p"] = {
+				"toggle_preview",
+				config = {
+					use_float = true,
+					use_image_nvim = true,
+					use_snacks_image = true,
+					title = "Neo-tree Preview",
+				},
+			},
 			["c"] = "copy_to_clipboard",
 			["<tab>"] = "next_source",
 			["<S-tab>"] = "prev_source",

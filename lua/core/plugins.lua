@@ -187,4 +187,11 @@ require("lazy").setup({
 			require("plugins.lint")
 		end,
 	},
+	{
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
+	{ "rebelot/kanagawa.nvim" },
+	{ "tinted-theming/tinted-nvim" },
 })
