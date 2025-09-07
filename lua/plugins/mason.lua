@@ -11,10 +11,13 @@ mason_lspconfig.setup({
 		"cssls",
 		"pyright",
 		"gopls",
+		"pbls",
 	},
 	handlers = {
 		function(server_name)
-			lspconfig[server_name].setup({})
+			lspconfig[server_name].setup({
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+			})
 		end,
 	},
 })

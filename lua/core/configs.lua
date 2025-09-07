@@ -14,3 +14,9 @@ vim.opt.fillchars = {
 }
 vim.o.laststatus = 3
 vim.o.clipboard = "unnamedplus"
+
+-- Set filetype for protobuf files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.proto",
+  command = "set filetype=proto",
+})
