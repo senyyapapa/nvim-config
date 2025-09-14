@@ -51,3 +51,27 @@ lspconfig.ts_ls.setup({
 		},
 	},
 })
+
+lspconfig.clangd.setup({
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	filetypes = { "c", "cpp" },
+	cmd = {
+		"clangd",
+		"-extra-arg",
+		"-I/usr/local/lib/wx/include/osx_cocoa-unicode-3.3",
+		"-extra-arg",
+		"-I/usr/local/include/wx-3.3",
+		"-extra-arg",
+		"-D_FILE_OFFSET_BITS=64",
+		"-extra-arg",
+		"-DwxDEBUG_LEVEL=0",
+		"-extra-arg",
+		"-DWXUSINGDLL",
+		"-extra-arg",
+		"-D__WXMAC__",
+		"-extra-arg",
+		"-D__WXOSX__",
+		"-extra-arg",
+		"-D__WXOSX_COCOA__",
+	},
+})

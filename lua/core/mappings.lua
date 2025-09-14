@@ -1,4 +1,5 @@
 require("core.alias")
+require("plugins.clangd")
 
 vim.g.mapleader = " "
 
@@ -13,6 +14,8 @@ Nm("<leader>X", ":BufferLinePickClose<CR>")
 Nm("<leader>s", ":BufferLineSortByTabs<CR>")
 Nm("<Tab>", ":BufferLineCycleNext<CR>")
 Nm("<s-Tab>", ":BufferLineCyclePrev<CR>")
+Nm(";", ":")
+Nm("<leader>cc", ":lua configure_cmake()<CR>")
 
 --movement
 Nm("<C-h>", "<C-\\><C-n><C-w>h")
